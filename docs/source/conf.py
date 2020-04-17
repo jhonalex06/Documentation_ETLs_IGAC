@@ -21,6 +21,7 @@ import sphinx_rtd_theme
 project = 'Documentation_ETLs_IGAC'
 copyright = '2020, Agencia de implementación'
 author = 'Agencia de implementación'
+project_name = 'Documentación ETLs IGAC'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
@@ -32,7 +33,10 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['recommonmark',
-              'sphinx_rtd_theme']
+              'sphinx_rtd_theme',
+              'rst2pdf.pdfbuilder']
+
+pdf_documents = [('index', project, project_name, author)]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
