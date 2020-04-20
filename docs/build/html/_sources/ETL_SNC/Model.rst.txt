@@ -8,5 +8,5 @@ Operaciones realizadas
 
 
 
-Flujo de llenado de tablas en el modelo LADM-COL
--------------------------------------------------
+Flujo del diligenciamiento de tablas en el modelo LADM-COL
+----------------------------------------------------------
