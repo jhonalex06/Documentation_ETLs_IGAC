@@ -1,15 +1,63 @@
 \babel@toc {spanish}{}
-\contentsline {chapter}{\numberline {1}ETL Cobol}{1}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}Insumos necesarios para ejecutar el ETL}{1}{section.1.1}% 
-\contentsline {section}{\numberline {1.2}Estructura de los insumos}{1}{section.1.2}% 
-\contentsline {section}{\numberline {1.3}Procedimiento para ejecutar el ETL}{1}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}Estructura del modelo}{1}{section.1.4}% 
-\contentsline {subsection}{\numberline {1.4.1}Operaciones realizadas}{1}{subsection.1.4.1}% 
-\contentsline {subsection}{\numberline {1.4.2}Flujo del diligenciamiento de tablas en el modelo LADM\sphinxhyphen {}COL}{1}{subsection.1.4.2}% 
-\contentsline {chapter}{\numberline {2}ETL SNC}{3}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Insumos necesarios para ejecutar el ETL}{3}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Estructura de los insumos}{3}{section.2.2}% 
-\contentsline {section}{\numberline {2.3}Procedimiento para ejecutar el ETL}{3}{section.2.3}% 
-\contentsline {section}{\numberline {2.4}Estructura del modelo}{3}{section.2.4}% 
-\contentsline {subsection}{\numberline {2.4.1}Operaciones realizadas}{3}{subsection.2.4.1}% 
-\contentsline {subsection}{\numberline {2.4.2}Flujo del diligenciamiento de tablas en el modelo LADM\sphinxhyphen {}COL}{3}{subsection.2.4.2}% 
+\contentsline {chapter}{\numberline {1}ETL Cobol}{3}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Insumos necesarios para ejecutar el ETL}{3}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Estructura de los insumos}{3}{section.1.2}% 
+\contentsline {subsection}{\numberline {1.2.1}Blo.lis}{3}{subsection.1.2.1}% 
+\contentsline {subsection}{\numberline {1.2.2}Uni.lis}{4}{subsection.1.2.2}% 
+\contentsline {subsection}{\numberline {1.2.3}Ter.lis}{4}{subsection.1.2.3}% 
+\contentsline {subsection}{\numberline {1.2.4}Pro.lis}{5}{subsection.1.2.4}% 
+\contentsline {section}{\numberline {1.3}Procedimiento para ejecutar el ETL}{5}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Estructura del modelo}{10}{section.1.4}% 
+\contentsline {subsection}{\numberline {1.4.1}Funciones involucradas}{10}{subsection.1.4.1}% 
+\contentsline {subsection}{\numberline {1.4.2}Flujo del diligenciamiento de tablas en el modelo LADM\sphinxhyphen {}COL}{11}{subsection.1.4.2}% 
+\contentsline {subsection}{\numberline {1.4.3}GC\_Predio\_Catastro}{11}{subsection.1.4.3}% 
+\contentsline {subsection}{\numberline {1.4.4}GC\_Terreno}{12}{subsection.1.4.4}% 
+\contentsline {subsection}{\numberline {1.4.5}GC\_Comisiones\_Terreno}{14}{subsection.1.4.5}% 
+\contentsline {subsection}{\numberline {1.4.6}GC\_Direccion}{15}{subsection.1.4.6}% 
+\contentsline {subsection}{\numberline {1.4.7}GC\_Construccion}{16}{subsection.1.4.7}% 
+\contentsline {subsection}{\numberline {1.4.8}GC\_Comisiones\_Construccion}{16}{subsection.1.4.8}% 
+\contentsline {subsection}{\numberline {1.4.9}GC\_Unidad\_Construccion}{16}{subsection.1.4.9}% 
+\contentsline {subsection}{\numberline {1.4.10}GC\_Comisiones\_Unidad\_Construccion}{17}{subsection.1.4.10}% 
+\contentsline {subsection}{\numberline {1.4.11}GC\_Copropiedad}{18}{subsection.1.4.11}% 
+\contentsline {subsection}{\numberline {1.4.12}GC\_Datos\_PH\_Condominio}{18}{subsection.1.4.12}% 
+\contentsline {subsection}{\numberline {1.4.13}GC\_Propietario}{18}{subsection.1.4.13}% 
+\contentsline {subsection}{\numberline {1.4.14}GC\_Perimetro}{19}{subsection.1.4.14}% 
+\contentsline {subsection}{\numberline {1.4.15}GC\_Vereda}{19}{subsection.1.4.15}% 
+\contentsline {subsection}{\numberline {1.4.16}GC\_Manzana}{19}{subsection.1.4.16}% 
+\contentsline {subsection}{\numberline {1.4.17}GC\_Barrio}{19}{subsection.1.4.17}% 
+\contentsline {subsection}{\numberline {1.4.18}GC\_Sector\_Urbano}{20}{subsection.1.4.18}% 
+\contentsline {subsection}{\numberline {1.4.19}GC\_Sector\_Rural}{20}{subsection.1.4.19}% 
+\contentsline {section}{\numberline {1.5}Estructura del ETL SNC en repositorio}{20}{section.1.5}% 
+\contentsline {chapter}{\numberline {2}ETL SNC}{21}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Insumos necesarios para ejecutar el ETL}{21}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Estructura de los insumos}{22}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Predio\_bloqueo.csv}{22}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Predio.csv}{22}{subsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.2.3}Predio\_direccion.csv}{22}{subsection.2.2.3}% 
+\contentsline {subsection}{\numberline {2.2.4}Persona.csv}{22}{subsection.2.2.4}% 
+\contentsline {subsection}{\numberline {2.2.5}Persona\_predio.csv}{23}{subsection.2.2.5}% 
+\contentsline {subsection}{\numberline {2.2.6}Unidad\_construccion.csv}{23}{subsection.2.2.6}% 
+\contentsline {subsection}{\numberline {2.2.7}Unidad\_construccion\_comp.csv}{23}{subsection.2.2.7}% 
+\contentsline {subsection}{\numberline {2.2.8}Ficha\_matriz.csv}{24}{subsection.2.2.8}% 
+\contentsline {subsection}{\numberline {2.2.9}Ficha\_matriz\_predio.csv}{24}{subsection.2.2.9}% 
+\contentsline {subsection}{\numberline {2.2.10}Ficha\_matriz\_torre.csv}{24}{subsection.2.2.10}% 
+\contentsline {section}{\numberline {2.3}Procedimiento para ejecutar el ETL}{24}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Estructura del modelo}{29}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Funciones involucradas}{29}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.2}Flujo del diligenciamiento de tablas en el modelo LADM\sphinxhyphen {}COL}{29}{subsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.4.3}GC\_Predio\_Catastro}{29}{subsection.2.4.3}% 
+\contentsline {subsection}{\numberline {2.4.4}GC\_Terreno}{31}{subsection.2.4.4}% 
+\contentsline {subsection}{\numberline {2.4.5}GC\_Comisiones\_Terreno}{31}{subsection.2.4.5}% 
+\contentsline {subsection}{\numberline {2.4.6}GC\_Direccion}{31}{subsection.2.4.6}% 
+\contentsline {subsection}{\numberline {2.4.7}GC\_Construccion}{32}{subsection.2.4.7}% 
+\contentsline {subsection}{\numberline {2.4.8}GC\_Comisiones\_Construccion}{32}{subsection.2.4.8}% 
+\contentsline {subsection}{\numberline {2.4.9}GC\_Unidad\_Construccion}{33}{subsection.2.4.9}% 
+\contentsline {subsection}{\numberline {2.4.10}GC\_Comisiones\_Unidad\_Construccion}{34}{subsection.2.4.10}% 
+\contentsline {subsection}{\numberline {2.4.11}GC\_Propietario}{34}{subsection.2.4.11}% 
+\contentsline {subsection}{\numberline {2.4.12}GC\_Perimetro}{34}{subsection.2.4.12}% 
+\contentsline {subsection}{\numberline {2.4.13}GC\_Vereda}{34}{subsection.2.4.13}% 
+\contentsline {subsection}{\numberline {2.4.14}GC\_Manzana}{35}{subsection.2.4.14}% 
+\contentsline {subsection}{\numberline {2.4.15}GC\_Barrio}{35}{subsection.2.4.15}% 
+\contentsline {subsection}{\numberline {2.4.16}GC\_Sector\_Urbano}{35}{subsection.2.4.16}% 
+\contentsline {subsection}{\numberline {2.4.17}GC\_Sector\_Rural}{35}{subsection.2.4.17}% 
+\contentsline {section}{\numberline {2.5}Estructura del ETL SNC en repositorio}{36}{section.2.5}% 

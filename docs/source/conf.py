@@ -36,6 +36,12 @@ extensions = ['recommonmark',
               'sphinx_rtd_theme',
               'rst2pdf.pdfbuilder']
 
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
+}
+
 pdf_documents = [('index', project, project_name, author)]
 
 # Add any paths that contain templates here, relative to this directory.

@@ -7,7 +7,8 @@ Esta sección describe los insumos
     :glob:
     :maxdepth: 2
 
-    ETL_SNC/supplies.rst
-    ETL_SNC/Structure.rst
-    ETL_SNC/Process.rst
-    ETL_SNC/Model.rst
+    ETL_SNC/supplies.md
+    ETL_SNC/Structure.md
+    ETL_SNC/Process.md
+    ETL_SNC/Model.md
+    ETL_SNC/Repository.md

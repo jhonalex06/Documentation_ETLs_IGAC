@@ -1,0 +1,111 @@
+Estructura de los insumos
+===================================================
+
+Predio_bloqueo.csv
+------------------
+
+* FECHA INICIO BLOQUEO 
+* TIPO BLOQUEO 
+* TIPO DESBLOQUEO 
+* ENTIDAD BLOQUEO 
+
+Predio.csv
+----------
+
+* ID 
+* NUMERO_PREDIAL 
+* NUMERO_PREDIAL_ANTERIOR 
+* CIRCULO_REGISTRAL 
+* NUMERO_REGISTRO 
+* TIPO 
+* CONDICION_PROPIEDAD 
+* DESTINO 
+
+Predio_direccion.csv 
+--------------------
+    
+* ID 
+* PREDIO_ID 
+* DIRECCION 
+* PRINCIPAL 
+
+Persona.csv 
+-----------
+
+* ID 
+* TIPO_IDENTIFICACION 
+* NUMERO_IDENTIFICACION 
+* DIGITO_VERIFICACION 
+* PRIMER_NOMBRE 
+* SEGUNDO_NOMBRE 
+* PRIMER_APELLIDO 
+* SEGUNDO_APELLIDO 
+* RAZON_SOCIAL 
+
+Persona_predio.csv 
+------------------
+
+* ID
+* PREDIO_ID 
+* PERSONA_ID 
+
+Unidad_construccion.csv 
+-----------------------
+
+* ID 
+* PREDIO_ID 
+* UNIDAD 
+* TIPO_DOMINIO 
+* TIPO_CONSTRUCCION 
+* PISO_UBICACIÓN 
+* TOTAL_HABITACIONES 
+* TOTAL_BANIOS 
+* TOTAL_LOCALES 
+* TOTAL_PISOS_UNIDAD 
+* USO_ID 
+* ANIO_CONSTRUCCION 
+* TOTAL_PUNTAJE 
+* AREA_CONSTRUIDA 
+
+Unidad_construccion_comp.csv 
+----------------------------
+
+* ID 
+* UNIDAD_CONSTRUCCION_ID 
+* COMPONENTE
+* ELEMENTO_CALIFICACION 
+* DETALLE_CALIFICACION 
+* PUNTOS 
+
+Ficha_matriz.csv
+----------------
+
+* ID 
+* PREDIO_ID 
+* AREA_TOTAL_CONSTRUIDA_COMUN 
+* AREA_TOTAL_CONSTRUIDA_PRIVADA 
+* AREA_TOTAL_TERRENO_COMUN 
+* AREA_TOTAL_TERRENO_PRIVADA 
+* VALOR_TOTAL_AVALUO_CATASTRAL 
+* TOTAL_UNIDADES_PRIVADAS 
+* TOTAL_UNIDADES_SOTANOS  
+
+Ficha_matriz_predio.csv 
+-----------------------
+
+* ID
+* FICHA_MATRIZ_ID 
+* NUMERO_PREDIAL 
+* COEFICIENTE 
+* CONSECUTIVO_UNIDAD 
+
+Ficha_matriz_torre.csv
+---------------------- 
+
+* ID 
+* FICHA_MATRIZ_ID 
+* TORRE 
+* PISOS 
+* UNIDADES_PRIVADAS 
+* SOTANOS 
+* UNIDADES_SOTANOS 

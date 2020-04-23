@@ -7,7 +7,8 @@ Esta sección describe los insumos
     :glob:
     :maxdepth: 2
 
-    ETL_Cobol/supplies.rst
-    ETL_Cobol/Structure.rst
-    ETL_Cobol/Process.rst
-    ETL_Cobol/Model.rst
+    ETL_Cobol/supplies.md
+    ETL_Cobol/Structure.md
+    ETL_Cobol/Process.md
+    ETL_Cobol/Model.md
+    ETL_Cobol/Repository.md

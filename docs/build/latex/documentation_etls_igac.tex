@@ -75,7 +75,7 @@
 
 
 \title{Documentation\_ETLs\_IGAC}
-\date{17 de abril de 2020}
+\date{23 de abril de 2020}
 \release{0.0.1}
 \author{Agencia de implementación}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -96,6 +96,19 @@
 \phantomsection\label{\detokenize{index::doc}}
 
 
+Este documento tiene como objetivo proporcionar la facilidad de usar, estudiar, compartir y mejorar los ETL del sistema COBOL
+y el Sistema Nacional Catastral (IGAC), para esto se divide el documento en dos partes fundamentales, la primera, hace referencia
+a la ejecución de cada uno de los ETL desarrollados y en la segunda se encuentra una descripción de los aspectos técnicos de la
+estructura del modelo.
+
+Los ETL del sistema de COBOL y el Sistema Nacional Catastral fueron desarrollados en el software QGIS debido a su facilidad para el
+manejo de diferentes fuentes de información y además de la posibilidad de integrar la información geográfica con la información alfanumérica.
+Para la generación de estos ETL fue necesario el uso de los diferentes insumos proporcionados por cada uno de los sistemas al interior de IGAC,
+\begin{quote}
+
+los cuales se mencionan al comienzo de cada ETL.
+\end{quote}
+
 
 \chapter{ETL Cobol}
 \label{\detokenize{ETL Cobol:etl-cobol}}\label{\detokenize{ETL Cobol::doc}}
@@ -104,21 +117,731 @@ Esta sección describe los insumos
 
 \section{Insumos necesarios para ejecutar el ETL}
 \label{\detokenize{ETL_Cobol/supplies:insumos-necesarios-para-ejecutar-el-etl}}\label{\detokenize{ETL_Cobol/supplies::doc}}
+Para la ejecución del ETL de COBOL es necesario el uso de cinco (5) insumos con extensión .lis, los cuales se distribuyen de la siguiente manera, cuatro (4) archivos obligatorios y uno (1) opcional, los cuales se mencionan a continuación:
+\begin{itemize}
+\item {} 
+Blo.lis \sphinxhyphen{} (Opcional)
+
+\item {} 
+Uni.lis\sphinxhyphen{} (Obligatorio)
+
+\item {} 
+Ter.lis\sphinxhyphen{} (Obligatorio)
+
+\item {} 
+Pro.lis\sphinxhyphen{} (Obligatorio)
+
+\end{itemize}
+
 
 \section{Estructura de los insumos}
 \label{\detokenize{ETL_Cobol/Structure:estructura-de-los-insumos}}\label{\detokenize{ETL_Cobol/Structure::doc}}
 
+\subsection{Blo.lis}
+\label{\detokenize{ETL_Cobol/Structure:blo-lis}}\begin{itemize}
+\item {} 
+DEPART\sphinxhyphen{}BL
+
+\item {} 
+MUNICI\sphinxhyphen{}BL
+
+\item {} 
+NUMPRED\sphinxhyphen{}BL
+
+\item {} 
+ESTADO\sphinxhyphen{}BL
+
+\item {} 
+ENT\sphinxhyphen{}EMISORA\sphinxhyphen{}BL
+
+\item {} 
+ANO\sphinxhyphen{}SIST\sphinxhyphen{}ALERTA\sphinxhyphen{}BL
+
+\item {} 
+MES\sphinxhyphen{}SIST\sphinxhyphen{}ALERTA\sphinxhyphen{}BL
+
+\item {} 
+DIA\sphinxhyphen{}SIST\sphinxhyphen{}ALERTA\sphinxhyphen{}BL
+
+\end{itemize}
+
+
+\subsection{Uni.lis}
+\label{\detokenize{ETL_Cobol/Structure:uni-lis}}\begin{itemize}
+\item {} 
+UNI\sphinxhyphen{}CDEP
+
+\item {} 
+UNI\sphinxhyphen{}CMUN
+
+\item {} 
+UNI\sphinxhyphen{}NUMPRED
+
+\item {} 
+UNI\sphinxhyphen{}TICA\sphinxhyphen{}E2
+
+\item {} 
+UNI\sphinxhyphen{}MATRICULA
+
+\item {} 
+UNI\sphinxhyphen{}DECO\sphinxhyphen{}E2
+
+\item {} 
+UNI\sphinxhyphen{}DIRECCION
+
+\item {} 
+UNI\sphinxhyphen{}HECTAREA
+
+\item {} 
+UNI\sphinxhyphen{}METROSTE
+
+\end{itemize}
+
+
+\subsection{Ter.lis}
+\label{\detokenize{ETL_Cobol/Structure:ter-lis}}\begin{itemize}
+\item {} 
+DEP\sphinxhyphen{}TER
+
+\item {} 
+MUN\sphinxhyphen{}TER
+
+\item {} 
+NUM\sphinxhyphen{}PREDIAL\sphinxhyphen{}TER
+
+\item {} 
+PIS21\sphinxhyphen{}TER
+
+\item {} 
+DES21\sphinxhyphen{}TER
+
+\item {} 
+PUN21\sphinxhyphen{}TER
+
+\item {} 
+ARE21\sphinxhyphen{}TER
+
+\item {} 
+PIS22\sphinxhyphen{}TER
+
+\item {} 
+DES22\sphinxhyphen{}TER
+
+\item {} 
+PUN22\sphinxhyphen{}TER
+
+\item {} 
+ARE22\sphinxhyphen{}TER
+
+\item {} 
+PIS23\sphinxhyphen{}TER
+
+\item {} 
+DES23\sphinxhyphen{}TER
+
+\item {} 
+PUN23\sphinxhyphen{}TER
+
+\item {} 
+ARE23\sphinxhyphen{}TER
+
+\end{itemize}
+
+
+\subsection{Pro.lis}
+\label{\detokenize{ETL_Cobol/Structure:pro-lis}}\begin{itemize}
+\item {} 
+TIPO\sphinxhyphen{}DOC\sphinxhyphen{}PRO
+
+\item {} 
+NUMERO\sphinxhyphen{}DOC\sphinxhyphen{}PRO
+
+\item {} 
+NOMBRE\sphinxhyphen{}PROP\sphinxhyphen{}PRO
+
+\end{itemize}
+
+
 \section{Procedimiento para ejecutar el ETL}
-\label{\detokenize{ETL_Cobol/Process:procedimiento-para-ejecutar-el-etl}}\label{\detokenize{ETL_Cobol/Process::doc}}
+\label{\detokenize{ETL_Cobol/Process:procedimiento-para-ejecutar-el-etl}}\label{\detokenize{ETL_Cobol/Process::doc}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Abrir QGIS.
+
+\item {} 
+Instalar el Asistente LADM\sphinxhyphen{}COL.
+
+\item {} 
+Seleccionar LADM\sphinxhyphen{}COL \sphinxhyphen{}\textgreater{} Administración de datos \sphinxhyphen{}\textgreater{} Crear estructura LADM\sphinxhyphen{}COL.
+
+\item {} 
+Realizamos clic en la opción, Configurar conexión.
+
+\item {} 
+Diligenciamos los datos de Host, Puerto, Usuario, Contraseña y realizamos clic en Refrescar bases de datos y esquemas.
+
+\item {} 
+Seleccionamos la base de datos y el esquema en donde queremos crear la estructura de LADM\sphinxhyphen{}COL, por último, clic en Aceptar.
+
+\sphinxincludegraphics{{config_database1}.png}
+
+\item {} 
+En la interfaz que se despliega, seleccionamos el SRC de nuestros datos, el modelo Datos\_Gestor\_Catastral\_V2\_9\_6 y clic en Crear estructura LADM\sphinxhyphen{}COL.
+
+\sphinxincludegraphics{{create_structure1}.png}
+
+\item {} 
+Una vez se ha creado la estructura de Datos\_Gestor\_Catastral, se da clic en Cerrar.
+
+\item {} 
+Seleccionar LADM\sphinxhyphen{}COL \sphinxhyphen{}\textgreater{} Gestión de insumos de datos \sphinxhyphen{}\textgreater{} Crear estructura LADM\sphinxhyphen{}COL.
+
+\item {} 
+Seleccionar ETL para datos Cobol \sphinxhyphen{}\textgreater{} Clic en Next
+
+\sphinxincludegraphics{{initial_etl_snc1}.png}
+
+\item {} 
+Seguido es necesario cargar cada uno de los archivos con extensión .lis y definir la base de datos destino a partir del botón configurar conexión \sphinxhyphen{}\textgreater{} seleccionamos el esquema en el que deseamos crear los datos.
+
+\item {} 
+Por último, clic en Ejecutar ETL.
+
+\sphinxincludegraphics{{supplies_etl_snc1}.png}
+
+\item {} 
+Por último, se obtiene un resumen de los datos transferidos al modelo LADM\sphinxhyphen{}COL y clic en finalizar.
+
+\sphinxincludegraphics{{result_etl_snc1}.png}
+
+\end{enumerate}
+
 
 \section{Estructura del modelo}
 \label{\detokenize{ETL_Cobol/Model:estructura-del-modelo}}\label{\detokenize{ETL_Cobol/Model::doc}}
 
-\subsection{Operaciones realizadas}
-\label{\detokenize{ETL_Cobol/Model:operaciones-realizadas}}
+\subsection{Funciones involucradas}
+\label{\detokenize{ETL_Cobol/Model:funciones-involucradas}}\begin{itemize}
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Calculadora de campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Extraer por atributo.
+
+\item {} 
+Insertar registros a la capa.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir capas vectoriales.
+
+\end{itemize}
+
 
 \subsection{Flujo del diligenciamiento de tablas en el modelo LADM\sphinxhyphen{}COL}
 \label{\detokenize{ETL_Cobol/Model:flujo-del-diligenciamiento-de-tablas-en-el-modelo-ladm-col}}
+
+\subsection{GC\_Predio\_Catastro}
+\label{\detokenize{ETL_Cobol/Model:gc-predio-catastro}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Extraer por atributo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_predio1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Terreno}
+\label{\detokenize{ETL_Cobol/Model:gc-terreno}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_terreno1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Comisiones\_Terreno}
+\label{\detokenize{ETL_Cobol/Model:gc-comisiones-terreno}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_comisiones_terreno1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Direccion}
+\label{\detokenize{ETL_Cobol/Model:gc-direccion}}
+Nota: Comenzando de izquierda a derecha
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_direccion1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Construccion}
+\label{\detokenize{ETL_Cobol/Model:gc-construccion}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Extraer por atributo.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_construccion1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Comisiones\_Construccion}
+\label{\detokenize{ETL_Cobol/Model:gc-comisiones-construccion}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Extraer por atributo.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_comisiones_construccion1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Unidad\_Construccion}
+\label{\detokenize{ETL_Cobol/Model:gc-unidad-construccion}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Extraer por atributo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Extraer por atributo.
+
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Extraer por atributo.
+
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_unidad_construccion1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Comisiones\_Unidad\_Construccion}
+\label{\detokenize{ETL_Cobol/Model:gc-comisiones-unidad-construccion}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Extraer por atributo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Extraer por atributo.
+
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Extraer por atributo.
+
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_comisiones_construccion1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Copropiedad}
+\label{\detokenize{ETL_Cobol/Model:gc-copropiedad}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Calculadora de campos.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_copropiedad1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Datos\_PH\_Condominio}
+\label{\detokenize{ETL_Cobol/Model:gc-datos-ph-condominio}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_datos_ph_condominio1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Propietario}
+\label{\detokenize{ETL_Cobol/Model:gc-propietario}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_propietario1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Perimetro}
+\label{\detokenize{ETL_Cobol/Model:gc-perimetro}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_perimetro1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Vereda}
+\label{\detokenize{ETL_Cobol/Model:gc-vereda}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_vereda1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Manzana}
+\label{\detokenize{ETL_Cobol/Model:gc-manzana}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_manzana1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Barrio}
+\label{\detokenize{ETL_Cobol/Model:gc-barrio}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_barrio1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Sector\_Urbano}
+\label{\detokenize{ETL_Cobol/Model:gc-sector-urbano}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_sector_urbano1}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Sector\_Rural}
+\label{\detokenize{ETL_Cobol/Model:gc-sector-rural}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_sector_rural1}.png}
+
+\end{enumerate}
+
+
+\section{Estructura del ETL SNC en repositorio}
+\label{\detokenize{ETL_Cobol/Repository:estructura-del-etl-snc-en-repositorio}}\label{\detokenize{ETL_Cobol/Repository::doc}}
+\sphinxhref{https://github.com/AgenciaImplementacion/Asistente-LADM-COL}{Repositorio}
+
+\sphinxhref{https://github.com/AgenciaImplementacion/Asistente-LADM-COL/tree/master/asistente\_ladm\_col/gui/supplies}{Lógica de la interfaz}
+\begin{itemize}
+\item {} 
+cobol\_data\_sources\_widget.py
+
+\item {} 
+wiz\_supplies\_etl.py
+
+\end{itemize}
+
+\sphinxhref{https://github.com/AgenciaImplementacion/Asistente-LADM-COL/tree/master/asistente\_ladm\_col/resources/etl}{Recursos}
+\begin{itemize}
+\item {} 
+Blo.lis
+
+\end{itemize}
+
+\sphinxhref{https://github.com/AgenciaImplementacion/Asistente-LADM-COL/tree/master/asistente\_ladm\_col/ui/supplies}{Interfaces}
+\begin{itemize}
+\item {} 
+cobol\_data\_source\_widget.ui
+
+\item {} 
+wiz\_supplies\_etl.ui
+
+\end{itemize}
+
 
 \chapter{ETL SNC}
 \label{\detokenize{ETL SNC:etl-snc}}\label{\detokenize{ETL SNC::doc}}
@@ -127,21 +850,837 @@ Esta sección describe los insumos
 
 \section{Insumos necesarios para ejecutar el ETL}
 \label{\detokenize{ETL_SNC/supplies:insumos-necesarios-para-ejecutar-el-etl}}\label{\detokenize{ETL_SNC/supplies::doc}}
+Para la ejecución del ETL del SNC es necesario el uso de diez (10) insumos con extensión .csv, los cuales se distribuyen
+de la siguiente manera, síes (6) archivos obligatorios y cuatro (4) opcionales, los cuales se mencionan a continuación:
+\begin{itemize}
+\item {} 
+Predio\_bloqueo.csv \sphinxhyphen{} (Opcional)
+
+\item {} 
+Predio.csv \sphinxhyphen{} (Obligatorio)
+
+\item {} 
+Persona.csv \sphinxhyphen{} (Obligatorio)
+
+\item {} 
+Persona\_predio.csv \sphinxhyphen{} (Obligatorio)
+
+\item {} 
+Unidad\_construccion.csv \sphinxhyphen{} (Obligatorio)
+
+\item {} 
+Unidad\_construccion\_comp.csv \sphinxhyphen{} (Obligatorio)
+
+\item {} 
+Ficha\_matriz.csv \sphinxhyphen{} (Opcional)
+
+\item {} 
+Ficha\_matriz\_predio.csv \sphinxhyphen{} (Opcional)
+
+\item {} 
+Ficha\_matriz\_torre.csv \sphinxhyphen{} (Opcional)
+
+\end{itemize}
+
 
 \section{Estructura de los insumos}
 \label{\detokenize{ETL_SNC/Structure:estructura-de-los-insumos}}\label{\detokenize{ETL_SNC/Structure::doc}}
 
+\subsection{Predio\_bloqueo.csv}
+\label{\detokenize{ETL_SNC/Structure:predio-bloqueo-csv}}\begin{itemize}
+\item {} 
+FECHA INICIO BLOQUEO
+
+\item {} 
+TIPO BLOQUEO
+
+\item {} 
+TIPO DESBLOQUEO
+
+\item {} 
+ENTIDAD BLOQUEO
+
+\end{itemize}
+
+
+\subsection{Predio.csv}
+\label{\detokenize{ETL_SNC/Structure:predio-csv}}\begin{itemize}
+\item {} 
+ID
+
+\item {} 
+NUMERO\_PREDIAL
+
+\item {} 
+NUMERO\_PREDIAL\_ANTERIOR
+
+\item {} 
+CIRCULO\_REGISTRAL
+
+\item {} 
+NUMERO\_REGISTRO
+
+\item {} 
+TIPO
+
+\item {} 
+CONDICION\_PROPIEDAD
+
+\item {} 
+DESTINO
+
+\end{itemize}
+
+
+\subsection{Predio\_direccion.csv}
+\label{\detokenize{ETL_SNC/Structure:predio-direccion-csv}}\begin{itemize}
+\item {} 
+ID
+
+\item {} 
+PREDIO\_ID
+
+\item {} 
+DIRECCION
+
+\item {} 
+PRINCIPAL
+
+\end{itemize}
+
+
+\subsection{Persona.csv}
+\label{\detokenize{ETL_SNC/Structure:persona-csv}}\begin{itemize}
+\item {} 
+ID
+
+\item {} 
+TIPO\_IDENTIFICACION
+
+\item {} 
+NUMERO\_IDENTIFICACION
+
+\item {} 
+DIGITO\_VERIFICACION
+
+\item {} 
+PRIMER\_NOMBRE
+
+\item {} 
+SEGUNDO\_NOMBRE
+
+\item {} 
+PRIMER\_APELLIDO
+
+\item {} 
+SEGUNDO\_APELLIDO
+
+\item {} 
+RAZON\_SOCIAL
+
+\end{itemize}
+
+
+\subsection{Persona\_predio.csv}
+\label{\detokenize{ETL_SNC/Structure:persona-predio-csv}}\begin{itemize}
+\item {} 
+ID
+
+\item {} 
+PREDIO\_ID
+
+\item {} 
+PERSONA\_ID
+
+\end{itemize}
+
+
+\subsection{Unidad\_construccion.csv}
+\label{\detokenize{ETL_SNC/Structure:unidad-construccion-csv}}\begin{itemize}
+\item {} 
+ID
+
+\item {} 
+PREDIO\_ID
+
+\item {} 
+UNIDAD
+
+\item {} 
+TIPO\_DOMINIO
+
+\item {} 
+TIPO\_CONSTRUCCION
+
+\item {} 
+PISO\_UBICACIÓN
+
+\item {} 
+TOTAL\_HABITACIONES
+
+\item {} 
+TOTAL\_BANIOS
+
+\item {} 
+TOTAL\_LOCALES
+
+\item {} 
+TOTAL\_PISOS\_UNIDAD
+
+\item {} 
+USO\_ID
+
+\item {} 
+ANIO\_CONSTRUCCION
+
+\item {} 
+TOTAL\_PUNTAJE
+
+\item {} 
+AREA\_CONSTRUIDA
+
+\end{itemize}
+
+
+\subsection{Unidad\_construccion\_comp.csv}
+\label{\detokenize{ETL_SNC/Structure:unidad-construccion-comp-csv}}\begin{itemize}
+\item {} 
+ID
+
+\item {} 
+UNIDAD\_CONSTRUCCION\_ID
+
+\item {} 
+COMPONENTE
+
+\item {} 
+ELEMENTO\_CALIFICACION
+
+\item {} 
+DETALLE\_CALIFICACION
+
+\item {} 
+PUNTOS
+
+\end{itemize}
+
+
+\subsection{Ficha\_matriz.csv}
+\label{\detokenize{ETL_SNC/Structure:ficha-matriz-csv}}\begin{itemize}
+\item {} 
+ID
+
+\item {} 
+PREDIO\_ID
+
+\item {} 
+AREA\_TOTAL\_CONSTRUIDA\_COMUN
+
+\item {} 
+AREA\_TOTAL\_CONSTRUIDA\_PRIVADA
+
+\item {} 
+AREA\_TOTAL\_TERRENO\_COMUN
+
+\item {} 
+AREA\_TOTAL\_TERRENO\_PRIVADA
+
+\item {} 
+VALOR\_TOTAL\_AVALUO\_CATASTRAL
+
+\item {} 
+TOTAL\_UNIDADES\_PRIVADAS
+
+\item {} 
+TOTAL\_UNIDADES\_SOTANOS
+
+\end{itemize}
+
+
+\subsection{Ficha\_matriz\_predio.csv}
+\label{\detokenize{ETL_SNC/Structure:ficha-matriz-predio-csv}}\begin{itemize}
+\item {} 
+ID
+
+\item {} 
+FICHA\_MATRIZ\_ID
+
+\item {} 
+NUMERO\_PREDIAL
+
+\item {} 
+COEFICIENTE
+
+\item {} 
+CONSECUTIVO\_UNIDAD
+
+\end{itemize}
+
+
+\subsection{Ficha\_matriz\_torre.csv}
+\label{\detokenize{ETL_SNC/Structure:ficha-matriz-torre-csv}}\begin{itemize}
+\item {} 
+ID
+
+\item {} 
+FICHA\_MATRIZ\_ID
+
+\item {} 
+TORRE
+
+\item {} 
+PISOS
+
+\item {} 
+UNIDADES\_PRIVADAS
+
+\item {} 
+SOTANOS
+
+\item {} 
+UNIDADES\_SOTANOS
+
+\end{itemize}
+
+
 \section{Procedimiento para ejecutar el ETL}
-\label{\detokenize{ETL_SNC/Process:procedimiento-para-ejecutar-el-etl}}\label{\detokenize{ETL_SNC/Process::doc}}
+\label{\detokenize{ETL_SNC/Process:procedimiento-para-ejecutar-el-etl}}\label{\detokenize{ETL_SNC/Process::doc}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Abrir QGIS.
+
+\item {} 
+Instalar el Asistente LADM\sphinxhyphen{}COL.
+
+\item {} 
+Seleccionar LADM\sphinxhyphen{}COL \sphinxhyphen{}\textgreater{} Administración de datos \sphinxhyphen{}\textgreater{} Crear estructura LADM\sphinxhyphen{}COL.
+
+\item {} 
+Realizamos clic en la opción, Configurar conexión.
+
+\item {} 
+Diligenciamos los datos de Host, Puerto, Usuario, Contraseña y realizamos clic en Refrescar bases de datos y esquemas.
+
+\item {} 
+Seleccionamos la base de datos y el esquema en donde queremos crear la estructura de LADM\sphinxhyphen{}COL, por último, clic en Aceptar.
+
+\sphinxincludegraphics{{config_database}.png}
+
+\item {} 
+En la interfaz que se despliega, seleccionamos el SRC de nuestros datos, el modelo Datos\_Gestor\_Catastral\_V2\_9\_6 y clic en Crear estructura LADM\sphinxhyphen{}COL.
+
+\sphinxincludegraphics{{create_structure}.png}
+
+\item {} 
+Una vez se ha creado la estructura de Datos\_Gestor\_Catastral, se da clic en Cerrar.
+
+\item {} 
+Seleccionar LADM\sphinxhyphen{}COL \sphinxhyphen{}\textgreater{} Gestión de insumos de datos \sphinxhyphen{}\textgreater{} Crear estructura LADM\sphinxhyphen{}COL.
+
+\item {} 
+Seleccionar ETL para datos SNC \sphinxhyphen{}\textgreater{} Clic en Next.
+
+\sphinxincludegraphics{{initial_etl_snc}.png}
+
+\item {} 
+Seguido es necesario cargar cada uno de los archivos con extensión .csv y definir la base de datos destino a partir del botón configurar conexión \sphinxhyphen{}\textgreater{} seleccionamos el esquema en el que deseamos crear los datos.
+
+\item {} 
+Por último, clic en Ejecutar ETL.
+
+\sphinxincludegraphics{{supplies_etl_snc}.png}
+
+\item {} 
+Por último, se obtiene un resumen de los datos transferidos al modelo LADM\sphinxhyphen{}COL y clic en finalizar.
+
+\sphinxincludegraphics{{result_etl_snc}.png}
+
+\end{enumerate}
+
 
 \section{Estructura del modelo}
 \label{\detokenize{ETL_SNC/Model:estructura-del-modelo}}\label{\detokenize{ETL_SNC/Model::doc}}
 
-\subsection{Operaciones realizadas}
-\label{\detokenize{ETL_SNC/Model:operaciones-realizadas}}
+\subsection{Funciones involucradas}
+\label{\detokenize{ETL_SNC/Model:funciones-involucradas}}\begin{itemize}
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Calculadora de campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Extraer por atributo.
+
+\item {} 
+Insertar registros a la capa.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir capas vectoriales.
+
+\end{itemize}
+
 
 \subsection{Flujo del diligenciamiento de tablas en el modelo LADM\sphinxhyphen{}COL}
 \label{\detokenize{ETL_SNC/Model:flujo-del-diligenciamiento-de-tablas-en-el-modelo-ladm-col}}
+
+\subsection{GC\_Predio\_Catastro}
+\label{\detokenize{ETL_SNC/Model:gc-predio-catastro}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Calculadora de campos.
+
+\item {} 
+Calculadora de campos.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Insertar registros a la capa.
+
+\item {} 
+Calculadora de campos.
+
+\item {} 
+Calculadora de campos.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_predio}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Terreno}
+\label{\detokenize{ETL_SNC/Model:gc-terreno}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_terreno}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Comisiones\_Terreno}
+\label{\detokenize{ETL_SNC/Model:gc-comisiones-terreno}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_comisiones_terreno}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Direccion}
+\label{\detokenize{ETL_SNC/Model:gc-direccion}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir capas vectoriales.
+
+\textendash{}Ruta 1
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\textendash{}Ruta 2
+
+\item {} 
+Extraer por atributo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Insertar registros a la capa.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_direccion}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Construccion}
+\label{\detokenize{ETL_SNC/Model:gc-construccion}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_construccion}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Comisiones\_Construccion}
+\label{\detokenize{ETL_SNC/Model:gc-comisiones-construccion}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_comisiones_construccion}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Unidad\_Construccion}
+\label{\detokenize{ETL_SNC/Model:gc-unidad-construccion}}
+Nota: la parte superior hace referencia a la parte geográfica y la inferior a la alfanumérica.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{Parte} \PYG{n}{Superior}  
+\end{sphinxVerbatim}
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\end{enumerate}
+
+Parte Inferior
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Calculadora de campos.
+
+\item {} 
+Calculadora de campos.
+
+\item {} 
+Extraer por atributo x 3 (tres).
+
+\item {} 
+Unir atributos por valor de campo x 3 (tres).
+
+\item {} 
+Extraer por atributo x 3 (tres).
+
+\item {} 
+Rehacer campos x 3 (tres).
+
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_unidad_construccion}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Comisiones\_Unidad\_Construccion}
+\label{\detokenize{ETL_SNC/Model:gc-comisiones-unidad-construccion}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Unir capas vectoriales.
+
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Unir atributos por valor de campo.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_comisiones_unidad_construccion}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Propietario}
+\label{\detokenize{ETL_SNC/Model:gc-propietario}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_propietario}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Perimetro}
+\label{\detokenize{ETL_SNC/Model:gc-perimetro}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_perimetro}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Vereda}
+\label{\detokenize{ETL_SNC/Model:gc-vereda}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_vereda}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Manzana}
+\label{\detokenize{ETL_SNC/Model:gc-manzana}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_manzana}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Barrio}
+\label{\detokenize{ETL_SNC/Model:gc-barrio}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_barrio}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Sector\_Urbano}
+\label{\detokenize{ETL_SNC/Model:gc-sector-urbano}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_sector_urbano}.png}
+
+\end{enumerate}
+
+
+\subsection{GC\_Sector\_Rural}
+\label{\detokenize{ETL_SNC/Model:gc-sector-rural}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Corregir geometrías.
+
+\item {} 
+Rehacer campos.
+
+\item {} 
+Eliminar vértices duplicados.
+
+\item {} 
+Insertar registros a la capa.
+
+\sphinxincludegraphics{{gc_sector_rural}.png}
+
+\end{enumerate}
+
+
+\section{Estructura del ETL SNC en repositorio}
+\label{\detokenize{ETL_SNC/Repository:estructura-del-etl-snc-en-repositorio}}\label{\detokenize{ETL_SNC/Repository::doc}}
+\sphinxhref{https://github.com/AgenciaImplementacion/Asistente-LADM-COL}{Repositorio}
+
+\sphinxhref{https://github.com/AgenciaImplementacion/Asistente-LADM-COL/tree/master/asistente\_ladm\_col/gui/supplies}{Lógica de la interfaz}
+\begin{itemize}
+\item {} 
+snc\_data\_sources\_widget.py
+
+\item {} 
+wiz\_supplies\_etl.py
+
+\end{itemize}
+
+\sphinxhref{https://github.com/AgenciaImplementacion/Asistente-LADM-COL/tree/master/asistente\_ladm\_col/resources/etl}{Recursos}
+\begin{itemize}
+\item {} 
+ficha\_matriz.csv
+
+\item {} 
+ficha\_matriz\_predio.csv
+
+\item {} 
+ficha\_matriz\_torre.csv
+
+\item {} 
+predio\_sancion.csv
+
+\item {} 
+unidad\_construccion.csvt
+
+\end{itemize}
+
+\sphinxhref{https://github.com/AgenciaImplementacion/Asistente-LADM-COL/tree/master/asistente\_ladm\_col/ui/supplies}{Interfaces}
+\begin{itemize}
+\item {} 
+snc\_data\_source\_widget.ui
+
+\item {} 
+wiz\_supplies\_etl.ui
+
+\end{itemize}
+
 
 
 \renewcommand{\indexname}{Índice}

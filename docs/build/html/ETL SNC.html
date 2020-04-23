@@ -37,7 +37,7 @@
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Insumos necesarios para ejecutar el ETL" href="ETL_SNC/supplies.html" />
-    <link rel="prev" title="Estructura del modelo" href="ETL_Cobol/Model.html" /> 
+    <link rel="prev" title="Estructura del ETL SNC en repositorio" href="ETL_Cobol/Repository.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,6 +89,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Structure.html">Estructura de los insumos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Process.html">Procedimiento para ejecutar el ETL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html">Estructura del modelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Repository.html">Estructura del ETL SNC en repositorio</a></li>
 </ul>
 </li>
 </ul>
@@ -161,13 +162,41 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ETL_SNC/supplies.html">Insumos necesarios para ejecutar el ETL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ETL_SNC/Structure.html">Estructura de los insumos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ETL_SNC/Process.html">Procedimiento para ejecutar el ETL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ETL_SNC/Model.html">Estructura del modelo</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#operaciones-realizadas">Operaciones realizadas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#flujo-del-diligenciamiento-de-tablas-en-el-modelo-ladm-col">Flujo del diligenciamiento de tablas en el modelo LADM-COL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ETL_SNC/Structure.html">Estructura de los insumos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Structure.html#predio-bloqueo-csv">Predio_bloqueo.csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Structure.html#predio-csv">Predio.csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Structure.html#predio-direccion-csv">Predio_direccion.csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Structure.html#persona-csv">Persona.csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Structure.html#persona-predio-csv">Persona_predio.csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Structure.html#unidad-construccion-csv">Unidad_construccion.csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Structure.html#unidad-construccion-comp-csv">Unidad_construccion_comp.csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Structure.html#ficha-matriz-csv">Ficha_matriz.csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Structure.html#ficha-matriz-predio-csv">Ficha_matriz_predio.csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Structure.html#ficha-matriz-torre-csv">Ficha_matriz_torre.csv</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="ETL_SNC/Process.html">Procedimiento para ejecutar el ETL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ETL_SNC/Model.html">Estructura del modelo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#funciones-involucradas">Funciones involucradas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#flujo-del-diligenciamiento-de-tablas-en-el-modelo-ladm-col">Flujo del diligenciamiento de tablas en el modelo LADM-COL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-predio-catastro">GC_Predio_Catastro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-terreno">GC_Terreno</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-comisiones-terreno">GC_Comisiones_Terreno</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-direccion">GC_Direccion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-construccion">GC_Construccion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-comisiones-construccion">GC_Comisiones_Construccion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-unidad-construccion">GC_Unidad_Construccion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-comisiones-unidad-construccion">GC_Comisiones_Unidad_Construccion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-propietario">GC_Propietario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-perimetro">GC_Perimetro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-vereda">GC_Vereda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-manzana">GC_Manzana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-barrio">GC_Barrio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-sector-urbano">GC_Sector_Urbano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ETL_SNC/Model.html#gc-sector-rural">GC_Sector_Rural</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ETL_SNC/Repository.html">Estructura del ETL SNC en repositorio</a></li>
 </ul>
 </div>
 </div>
@@ -183,7 +212,7 @@
         <a href="ETL_SNC/supplies.html" class="btn btn-neutral float-right" title="Insumos necesarios para ejecutar el ETL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ETL_Cobol/Model.html" class="btn btn-neutral float-left" title="Estructura del modelo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ETL_Cobol/Repository.html" class="btn btn-neutral float-left" title="Estructura del ETL SNC en repositorio" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

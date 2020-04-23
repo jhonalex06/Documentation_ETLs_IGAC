@@ -1,0 +1,53 @@
+Estructura de los insumos
+==========================
+
+Blo.lis
+--------
+
+* DEPART-BL
+* MUNICI-BL
+* NUMPRED-BL
+* ESTADO-BL
+* ENT-EMISORA-BL
+* ANO-SIST-ALERTA-BL
+* MES-SIST-ALERTA-BL
+* DIA-SIST-ALERTA-BL
+
+Uni.lis
+--------
+
+* UNI-CDEP
+* UNI-CMUN
+* UNI-NUMPRED
+* UNI-TICA-E2
+* UNI-MATRICULA
+* UNI-DECO-E2
+* UNI-DIRECCION
+* UNI-HECTAREA
+* UNI-METROSTE
+
+Ter.lis
+--------
+
+* DEP-TER
+* MUN-TER
+* NUM-PREDIAL-TER
+* PIS21-TER
+* DES21-TER
+* PUN21-TER
+* ARE21-TER
+* PIS22-TER
+* DES22-TER
+* PUN22-TER
+* ARE22-TER
+* PIS23-TER
+* DES23-TER
+* PUN23-TER
+* ARE23-TER
+  
+Pro.lis
+--------
+
+* TIPO-DOC-PRO
+* NUMERO-DOC-PRO
+* NOMBRE-PROP-PRO

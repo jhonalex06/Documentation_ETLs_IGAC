@@ -86,7 +86,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../ETL Cobol.html">ETL Cobol</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../ETL SNC.html">ETL SNC</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="supplies.html">Insumos necesarios para ejecutar el ETL</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Estructura de los insumos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Estructura de los insumos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#predio-bloqueo-csv">Predio_bloqueo.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#predio-csv">Predio.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#predio-direccion-csv">Predio_direccion.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#persona-csv">Persona.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#persona-predio-csv">Persona_predio.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unidad-construccion-csv">Unidad_construccion.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unidad-construccion-comp-csv">Unidad_construccion_comp.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ficha-matriz-csv">Ficha_matriz.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ficha-matriz-predio-csv">Ficha_matriz_predio.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ficha-matriz-torre-csv">Ficha_matriz_torre.csv</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="Process.html">Procedimiento para ejecutar el ETL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Model.html">Estructura del modelo</a></li>
 </ul>
@@ -144,7 +156,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/ETL_SNC/Structure.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/ETL_SNC/Structure.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -159,6 +171,125 @@
             
   <div class="section" id="estructura-de-los-insumos">
 <h1>Estructura de los insumos<a class="headerlink" href="#estructura-de-los-insumos" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="predio-bloqueo-csv">
+<h2>Predio_bloqueo.csv<a class="headerlink" href="#predio-bloqueo-csv" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>FECHA INICIO BLOQUEO</p></li>
+<li><p>TIPO BLOQUEO</p></li>
+<li><p>TIPO DESBLOQUEO</p></li>
+<li><p>ENTIDAD BLOQUEO</p></li>
+</ul>
+</div>
+<div class="section" id="predio-csv">
+<h2>Predio.csv<a class="headerlink" href="#predio-csv" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>ID</p></li>
+<li><p>NUMERO_PREDIAL</p></li>
+<li><p>NUMERO_PREDIAL_ANTERIOR</p></li>
+<li><p>CIRCULO_REGISTRAL</p></li>
+<li><p>NUMERO_REGISTRO</p></li>
+<li><p>TIPO</p></li>
+<li><p>CONDICION_PROPIEDAD</p></li>
+<li><p>DESTINO</p></li>
+</ul>
+</div>
+<div class="section" id="predio-direccion-csv">
+<h2>Predio_direccion.csv<a class="headerlink" href="#predio-direccion-csv" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>ID</p></li>
+<li><p>PREDIO_ID</p></li>
+<li><p>DIRECCION</p></li>
+<li><p>PRINCIPAL</p></li>
+</ul>
+</div>
+<div class="section" id="persona-csv">
+<h2>Persona.csv<a class="headerlink" href="#persona-csv" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>ID</p></li>
+<li><p>TIPO_IDENTIFICACION</p></li>
+<li><p>NUMERO_IDENTIFICACION</p></li>
+<li><p>DIGITO_VERIFICACION</p></li>
+<li><p>PRIMER_NOMBRE</p></li>
+<li><p>SEGUNDO_NOMBRE</p></li>
+<li><p>PRIMER_APELLIDO</p></li>
+<li><p>SEGUNDO_APELLIDO</p></li>
+<li><p>RAZON_SOCIAL</p></li>
+</ul>
+</div>
+<div class="section" id="persona-predio-csv">
+<h2>Persona_predio.csv<a class="headerlink" href="#persona-predio-csv" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>ID</p></li>
+<li><p>PREDIO_ID</p></li>
+<li><p>PERSONA_ID</p></li>
+</ul>
+</div>
+<div class="section" id="unidad-construccion-csv">
+<h2>Unidad_construccion.csv<a class="headerlink" href="#unidad-construccion-csv" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>ID</p></li>
+<li><p>PREDIO_ID</p></li>
+<li><p>UNIDAD</p></li>
+<li><p>TIPO_DOMINIO</p></li>
+<li><p>TIPO_CONSTRUCCION</p></li>
+<li><p>PISO_UBICACIÓN</p></li>
+<li><p>TOTAL_HABITACIONES</p></li>
+<li><p>TOTAL_BANIOS</p></li>
+<li><p>TOTAL_LOCALES</p></li>
+<li><p>TOTAL_PISOS_UNIDAD</p></li>
+<li><p>USO_ID</p></li>
+<li><p>ANIO_CONSTRUCCION</p></li>
+<li><p>TOTAL_PUNTAJE</p></li>
+<li><p>AREA_CONSTRUIDA</p></li>
+</ul>
+</div>
+<div class="section" id="unidad-construccion-comp-csv">
+<h2>Unidad_construccion_comp.csv<a class="headerlink" href="#unidad-construccion-comp-csv" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>ID</p></li>
+<li><p>UNIDAD_CONSTRUCCION_ID</p></li>
+<li><p>COMPONENTE</p></li>
+<li><p>ELEMENTO_CALIFICACION</p></li>
+<li><p>DETALLE_CALIFICACION</p></li>
+<li><p>PUNTOS</p></li>
+</ul>
+</div>
+<div class="section" id="ficha-matriz-csv">
+<h2>Ficha_matriz.csv<a class="headerlink" href="#ficha-matriz-csv" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>ID</p></li>
+<li><p>PREDIO_ID</p></li>
+<li><p>AREA_TOTAL_CONSTRUIDA_COMUN</p></li>
+<li><p>AREA_TOTAL_CONSTRUIDA_PRIVADA</p></li>
+<li><p>AREA_TOTAL_TERRENO_COMUN</p></li>
+<li><p>AREA_TOTAL_TERRENO_PRIVADA</p></li>
+<li><p>VALOR_TOTAL_AVALUO_CATASTRAL</p></li>
+<li><p>TOTAL_UNIDADES_PRIVADAS</p></li>
+<li><p>TOTAL_UNIDADES_SOTANOS</p></li>
+</ul>
+</div>
+<div class="section" id="ficha-matriz-predio-csv">
+<h2>Ficha_matriz_predio.csv<a class="headerlink" href="#ficha-matriz-predio-csv" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>ID</p></li>
+<li><p>FICHA_MATRIZ_ID</p></li>
+<li><p>NUMERO_PREDIAL</p></li>
+<li><p>COEFICIENTE</p></li>
+<li><p>CONSECUTIVO_UNIDAD</p></li>
+</ul>
+</div>
+<div class="section" id="ficha-matriz-torre-csv">
+<h2>Ficha_matriz_torre.csv<a class="headerlink" href="#ficha-matriz-torre-csv" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>ID</p></li>
+<li><p>FICHA_MATRIZ_ID</p></li>
+<li><p>TORRE</p></li>
+<li><p>PISOS</p></li>
+<li><p>UNIDADES_PRIVADAS</p></li>
+<li><p>SOTANOS</p></li>
+<li><p>UNIDADES_SOTANOS</p></li>
+</ul>
+</div>
 </div>
 
 

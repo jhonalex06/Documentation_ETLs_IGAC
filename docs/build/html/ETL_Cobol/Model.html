@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Búsqueda" href="../search.html" />
-    <link rel="next" title="ETL SNC" href="../ETL SNC.html" />
+    <link rel="next" title="Estructura del ETL SNC en repositorio" href="Repository.html" />
     <link rel="prev" title="Procedimiento para ejecutar el ETL" href="Process.html" /> 
 </head>
 
@@ -88,10 +88,28 @@
 <li class="toctree-l2"><a class="reference internal" href="Structure.html">Estructura de los insumos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Process.html">Procedimiento para ejecutar el ETL</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Estructura del modelo</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#operaciones-realizadas">Operaciones realizadas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#funciones-involucradas">Funciones involucradas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#flujo-del-diligenciamiento-de-tablas-en-el-modelo-ladm-col">Flujo del diligenciamiento de tablas en el modelo LADM-COL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-predio-catastro">GC_Predio_Catastro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-terreno">GC_Terreno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-comisiones-terreno">GC_Comisiones_Terreno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-direccion">GC_Direccion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-construccion">GC_Construccion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-comisiones-construccion">GC_Comisiones_Construccion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-unidad-construccion">GC_Unidad_Construccion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-comisiones-unidad-construccion">GC_Comisiones_Unidad_Construccion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-copropiedad">GC_Copropiedad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-datos-ph-condominio">GC_Datos_PH_Condominio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-propietario">GC_Propietario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-perimetro">GC_Perimetro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-vereda">GC_Vereda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-manzana">GC_Manzana</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-barrio">GC_Barrio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-sector-urbano">GC_Sector_Urbano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-sector-rural">GC_Sector_Rural</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="Repository.html">Estructura del ETL SNC en repositorio</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ETL SNC.html">ETL SNC</a></li>
@@ -148,7 +166,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/ETL_Cobol/Model.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/ETL_Cobol/Model.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,11 +181,248 @@
             
   <div class="section" id="estructura-del-modelo">
 <h1>Estructura del modelo<a class="headerlink" href="#estructura-del-modelo" title="Enlazar permanentemente con este título">¶</a></h1>
-<div class="section" id="operaciones-realizadas">
-<h2>Operaciones realizadas<a class="headerlink" href="#operaciones-realizadas" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="funciones-involucradas">
+<h2>Funciones involucradas<a class="headerlink" href="#funciones-involucradas" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p>Corregir geometrías.</p></li>
+<li><p>Calculadora de campos.</p></li>
+<li><p>Eliminar vértices duplicados.</p></li>
+<li><p>Extraer por atributo.</p></li>
+<li><p>Insertar registros a la capa.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir capas vectoriales.</p></li>
+</ul>
 </div>
 <div class="section" id="flujo-del-diligenciamiento-de-tablas-en-el-modelo-ladm-col">
 <h2>Flujo del diligenciamiento de tablas en el modelo LADM-COL<a class="headerlink" href="#flujo-del-diligenciamiento-de-tablas-en-el-modelo-ladm-col" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="gc-predio-catastro">
+<h2>GC_Predio_Catastro<a class="headerlink" href="#gc-predio-catastro" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Extraer por atributo.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_predio" src="../_images/gc_predio1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-terreno">
+<h2>GC_Terreno<a class="headerlink" href="#gc-terreno" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Eliminar vértices duplicados.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_terreno" src="../_images/gc_terreno1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-comisiones-terreno">
+<h2>GC_Comisiones_Terreno<a class="headerlink" href="#gc-comisiones-terreno" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Eliminar vértices duplicados.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_comisiones_terreno" src="../_images/gc_comisiones_terreno1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-direccion">
+<h2>GC_Direccion<a class="headerlink" href="#gc-direccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Nota: Comenzando de izquierda a derecha</p>
+<ol>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_direccion" src="../_images/gc_direccion1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-construccion">
+<h2>GC_Construccion<a class="headerlink" href="#gc-construccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Extraer por atributo.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_construccion" src="../_images/gc_construccion1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-comisiones-construccion">
+<h2>GC_Comisiones_Construccion<a class="headerlink" href="#gc-comisiones-construccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Extraer por atributo.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_comisiones_construccion" src="../_images/gc_comisiones_construccion1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-unidad-construccion">
+<h2>GC_Unidad_Construccion<a class="headerlink" href="#gc-unidad-construccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Extraer por atributo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Extraer por atributo.</p></li>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Extraer por atributo.</p></li>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_unidad_construccion" src="../_images/gc_unidad_construccion1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-comisiones-unidad-construccion">
+<h2>GC_Comisiones_Unidad_Construccion<a class="headerlink" href="#gc-comisiones-unidad-construccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Extraer por atributo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Extraer por atributo.</p></li>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Extraer por atributo.</p></li>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Unir capas vectoriales.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_comisiones_construccion" src="../_images/gc_comisiones_construccion1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-copropiedad">
+<h2>GC_Copropiedad<a class="headerlink" href="#gc-copropiedad" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Calculadora de campos.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_copropiedad" src="../_images/gc_copropiedad1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-datos-ph-condominio">
+<h2>GC_Datos_PH_Condominio<a class="headerlink" href="#gc-datos-ph-condominio" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_datos_ph_condominio" src="../_images/gc_datos_ph_condominio1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-propietario">
+<h2>GC_Propietario<a class="headerlink" href="#gc-propietario" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Unir atributos por valor de campo.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_propietario" src="../_images/gc_propietario1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-perimetro">
+<h2>GC_Perimetro<a class="headerlink" href="#gc-perimetro" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Eliminar vértices duplicados.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_perimetro" src="../_images/gc_perimetro1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-vereda">
+<h2>GC_Vereda<a class="headerlink" href="#gc-vereda" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Eliminar vértices duplicados.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_vereda" src="../_images/gc_vereda1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-manzana">
+<h2>GC_Manzana<a class="headerlink" href="#gc-manzana" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Eliminar vértices duplicados.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_manzana" src="../_images/gc_manzana1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-barrio">
+<h2>GC_Barrio<a class="headerlink" href="#gc-barrio" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Eliminar vértices duplicados.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_barrio" src="../_images/gc_barrio1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-sector-urbano">
+<h2>GC_Sector_Urbano<a class="headerlink" href="#gc-sector-urbano" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Eliminar vértices duplicados.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_sector_rural" src="../_images/gc_sector_urbano1.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gc-sector-rural">
+<h2>GC_Sector_Rural<a class="headerlink" href="#gc-sector-rural" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol>
+<li><p>Corregir geometrías.</p></li>
+<li><p>Rehacer campos.</p></li>
+<li><p>Eliminar vértices duplicados.</p></li>
+<li><p>Insertar registros a la capa.</p>
+<p><img alt="gc_sector_rural" src="../_images/gc_sector_rural1.png" /></p>
+</li>
+</ol>
 </div>
 </div>
 
@@ -179,7 +434,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ETL SNC.html" class="btn btn-neutral float-right" title="ETL SNC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Repository.html" class="btn btn-neutral float-right" title="Estructura del ETL SNC en repositorio" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="Process.html" class="btn btn-neutral float-left" title="Procedimiento para ejecutar el ETL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

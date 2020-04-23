@@ -89,6 +89,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Structure.html">Estructura de los insumos</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Procedimiento para ejecutar el ETL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Model.html">Estructura del modelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Repository.html">Estructura del ETL SNC en repositorio</a></li>
 </ul>
 </li>
 </ul>
@@ -144,7 +145,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/ETL_SNC/Process.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/ETL_SNC/Process.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -159,6 +160,31 @@
             
   <div class="section" id="procedimiento-para-ejecutar-el-etl">
 <h1>Procedimiento para ejecutar el ETL<a class="headerlink" href="#procedimiento-para-ejecutar-el-etl" title="Enlazar permanentemente con este título">¶</a></h1>
+<ol>
+<li><p>Abrir QGIS.</p></li>
+<li><p>Instalar el Asistente LADM-COL.</p></li>
+<li><p>Seleccionar LADM-COL -&gt; Administración de datos -&gt; Crear estructura LADM-COL.</p></li>
+<li><p>Realizamos clic en la opción, Configurar conexión.</p></li>
+<li><p>Diligenciamos los datos de Host, Puerto, Usuario, Contraseña y realizamos clic en Refrescar bases de datos y esquemas.</p></li>
+<li><p>Seleccionamos la base de datos y el esquema en donde queremos crear la estructura de LADM-COL, por último, clic en Aceptar.</p>
+<p><img alt="Config_database" src="../_images/config_database.png" /></p>
+</li>
+<li><p>En la interfaz que se despliega, seleccionamos el SRC de nuestros datos, el modelo Datos_Gestor_Catastral_V2_9_6 y clic en Crear estructura LADM-COL.</p>
+<p><img alt="create_structure" src="../_images/create_structure.png" /></p>
+</li>
+<li><p>Una vez se ha creado la estructura de Datos_Gestor_Catastral, se da clic en Cerrar.</p></li>
+<li><p>Seleccionar LADM-COL -&gt; Gestión de insumos de datos -&gt; Crear estructura LADM-COL.</p></li>
+<li><p>Seleccionar ETL para datos SNC -&gt; Clic en Next.</p>
+<p><img alt="initial_etl_snc" src="../_images/initial_etl_snc.png" /></p>
+</li>
+<li><p>Seguido es necesario cargar cada uno de los archivos con extensión .csv y definir la base de datos destino a partir del botón configurar conexión -&gt; seleccionamos el esquema en el que deseamos crear los datos.</p></li>
+<li><p>Por último, clic en Ejecutar ETL.</p>
+<p><img alt="supplies_etl_snc" src="../_images/supplies_etl_snc.png" /></p>
+</li>
+<li><p>Por último, se obtiene un resumen de los datos transferidos al modelo LADM-COL y clic en finalizar.</p>
+<p><img alt="result_etl_snc" src="../_images/result_etl_snc.png" /></p>
+</li>
+</ol>
 </div>
 
 
