@@ -33,8 +33,7 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['recommonmark',
-              'sphinx_rtd_theme',
-              'rst2pdf.pdfbuilder']
+              'sphinx_rtd_theme']
 
 source_suffix = {
     '.rst': 'restructuredtext',
